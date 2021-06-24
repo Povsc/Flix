@@ -42,7 +42,7 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
            if (error != nil) {
-               NSLog(@"%@", [error localizedDescription]);
+               [self showAlert];
            }
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -81,6 +81,25 @@
     cell.posterView.image = nil;
     [cell.posterView setImageWithURL:posterURL];
     return cell;
+}
+
+- (void) showAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Error"
+                                                                               message:@"No Network Connection."
+                                                                        preferredStyle:(UIAlertControllerStyleAlert)];
+
+    // create an Try again action
+    UIAlertAction *tryAgainAction = [UIAlertAction actionWithTitle:@"Try again"
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction * _Nonnull action) {
+        [self fetchMovies];
+                                                     }];
+    // add the OK action to the alert controller
+    [alert addAction:tryAgainAction];
+    
+    [self presentViewController:alert animated:YES completion:^{
+//        [self fetchMovies];
+    }];
 }
 
 #pragma mark - Navigation
