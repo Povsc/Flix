@@ -82,7 +82,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Idr-Be-ib0">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHX-bA-vS1">
@@ -107,6 +107,27 @@
                                         <rect key="frame" x="94" y="103" width="202" height="299"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0x-OW-eE2">
+                                        <rect key="frame" x="16" y="445" width="358" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="421-4V-SMp">
+                                        <rect key="frame" x="16" y="487" width="68" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afJ-pI-ld5">
+                                                <rect key="frame" x="0.0" y="0.0" width="68" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="4wd-45-zgi"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="V6K-FJ-e3w"/>
@@ -119,8 +140,11 @@
                     <connections>
                         <outlet property="backdropView" destination="NRh-RT-Ggf" id="WQp-IU-Wog"/>
                         <outlet property="blurImage" destination="RYH-RH-t3Z" id="hk9-Ms-t4E"/>
+                        <outlet property="dateLabel" destination="k0x-OW-eE2" id="khf-iZ-0Dx"/>
                         <outlet property="navigationBar" destination="lT2-mf-Hn3" id="CNs-ux-Q5N"/>
                         <outlet property="posterView" destination="piv-Jc-k8P" id="Vkp-1M-a03"/>
+                        <outlet property="ratingLabel" destination="afJ-pI-ld5" id="On4-Cv-nhP"/>
+                        <outlet property="ratingView" destination="421-4V-SMp" id="xKe-3g-133"/>
                         <outlet property="synopsisLabel" destination="4iH-WG-8Yf" id="xht-Lz-BoM"/>
                         <outlet property="titleLabel" destination="jHX-bA-vS1" id="hin-yN-rgy"/>
                     </connections>
