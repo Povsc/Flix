@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *blurImage;
 @property (weak, nonatomic) IBOutlet UIView *ratingView;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *DetailsScrollView;
 @end
 
 @implementation DetailsViewController
@@ -61,6 +62,11 @@
     CGRect ratingFrame = self.ratingView.frame;
     ratingFrame.origin.y += displacement;
     self.ratingView.frame = ratingFrame;
+    
+//    CGSize contentSize = self.DetailsScrollView.contentSize;
+//    contentSize.height += displacement + 400;
+//    self.DetailsScrollView.contentSize = contentSize;
+//    self.DetailsScrollView.sad
     
     self.ratingView.layer.cornerRadius = 5;
     self.ratingView.layer.masksToBounds = true;
