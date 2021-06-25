@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MoviesViewController : UIViewController
 
+@property (strong, nonatomic) NSURL *url;
+@property (weak, nonatomic) IBOutlet UINavigationItem *barTitle;
+
 @end
 
 NS_ASSUME_NONNULL_END

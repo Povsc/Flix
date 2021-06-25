@@ -7,6 +7,7 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "MoviesViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *ratingView;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *DetailsScrollView;
+@property (weak, nonatomic) IBOutlet UIButton *moreButton;
 @end
 
 @implementation DetailsViewController
@@ -63,6 +65,10 @@
     ratingFrame.origin.y += displacement;
     self.ratingView.frame = ratingFrame;
     
+    CGRect buttonFrame = self.moreButton.frame;
+    buttonFrame.origin.y += displacement;
+    self.moreButton.frame = buttonFrame;
+    
 //    CGSize contentSize = self.DetailsScrollView.contentSize;
 //    contentSize.height += displacement + 400;
 //    self.DetailsScrollView.contentSize = contentSize;
@@ -88,14 +94,29 @@
     [self.blurImage addSubview:effectView];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+//    UIButton *tappedCell = sender;
+//    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+//    NSDictionary *movie = self.movies[indexPath.row];
+    
+    int identification = [self.movie[@"id"] intValue];
+//    NSLog(@"%d", (long *)identification);
+    NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%d/similar?api_key=eda1a3f4d4cd22b61fe7a4971ba6450d&language=en-US&page=1", identification];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSLog(@"%@", urlString);
+    
+    MoviesViewController *moviesViewController = [segue destinationViewController];
+    moviesViewController.url = url;
+    moviesViewController.barTitle.title = [NSString stringWithFormat:@"Similar to: %@", self.movie[@"title"]];
 }
-*/
+
 
 @end
