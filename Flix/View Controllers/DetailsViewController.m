@@ -69,10 +69,9 @@
     buttonFrame.origin.y += displacement;
     self.moreButton.frame = buttonFrame;
     
-//    CGSize contentSize = self.DetailsScrollView.contentSize;
-//    contentSize.height += displacement + 400;
-//    self.DetailsScrollView.contentSize = contentSize;
-//    self.DetailsScrollView.sad
+    CGSize contentSize = self.DetailsScrollView.contentSize;
+    contentSize.height += displacement + 600;
+    self.DetailsScrollView.contentSize = contentSize;
     
     self.ratingView.layer.cornerRadius = 5;
     self.ratingView.layer.masksToBounds = true;
