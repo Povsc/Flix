@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <activityIndicatorView key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="72Y-hA-W8W">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                            <rect key="frame" x="0.0" y="746" width="390" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </activityIndicatorView>
@@ -106,6 +106,7 @@
                                         <size key="customSize" width="180" height="275"/>
                                         <connections>
                                             <outlet property="posterView" destination="nJ9-OT-OkW" id="CPF-IK-N3r"/>
+                                            <segue destination="eWS-8X-HMA" kind="show" id="ySv-3Z-4Rc"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -135,7 +136,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Idr-Be-ib0">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Idr-Be-ib0">
                                 <rect key="frame" x="0.0" y="88" width="390" height="790"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
@@ -216,22 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2d-pL-5TS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16.923076923076923" y="1540.5213270142178"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Ded-0p-ePj">
-            <objects>
-                <viewController id="DzY-E5-AKx" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gXh-Zx-EYm">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="hbl-Tc-RDE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ga-Bz-HBg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="17" y="2264"/>
+            <point key="canvasLocation" x="17" y="1541"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bYL-4R-cXM">
@@ -289,6 +275,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="6hx-D5-yMS"/>
         <segue reference="gwG-1p-0dG"/>
     </inferredMetricsTieBreakers>
     <resources>
