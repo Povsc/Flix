@@ -50,9 +50,9 @@
 
                NSLog(@"%@", dataDictionary);
                self.movies = dataDictionary[@"results"];
-               for(NSDictionary *movie in self.movies){
-                   NSLog(@"%@", movie[@"title"]);
-               };
+               if (self.movies.count == 0){
+                   [self noSimilarAlert];
+               }
 
                [self.tableView reloadData];
                [self.activityIndicator stopAnimating];
@@ -100,6 +100,25 @@
     
     [self presentViewController:alert animated:YES completion:^{
 //        [self fetchMovies];
+    }];
+}
+
+- (void) noSimilarAlert {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Movies Found"
+                                                                               message:@"Try again later"
+                                                                        preferredStyle:(UIAlertControllerStyleAlert)];
+
+    // create an Try again action
+    UIAlertAction *noSimilarAction = [UIAlertAction actionWithTitle:@"OK"
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction * _Nonnull action) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+                                                     }];
+    // add the OK action to the alert controller
+    [alert addAction:noSimilarAction];
+    
+    [self presentViewController:alert animated:YES completion:^{
+//        do nothing
     }];
 }
 
