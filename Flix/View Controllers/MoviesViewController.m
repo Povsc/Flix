@@ -48,7 +48,6 @@
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 
-               NSLog(@"%@", dataDictionary);
                self.movies = dataDictionary[@"results"];
                if (self.movies.count == 0){
                    [self noSimilarAlert];
@@ -134,6 +133,7 @@
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
+    tappedCell.highlighted = false;
 }
 
 @end

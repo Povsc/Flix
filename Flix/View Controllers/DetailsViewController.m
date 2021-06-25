@@ -8,6 +8,7 @@
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "MoviesViewController.h"
+#import "TrailerViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBar;
@@ -21,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *DetailsScrollView;
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
+@property (weak, nonatomic) IBOutlet UIButton *trailerButton;
+@property (strong, nonatomic) NSString *keyString;
 @end
 
 @implementation DetailsViewController
@@ -69,6 +72,10 @@
     buttonFrame.origin.y += displacement;
     self.moreButton.frame = buttonFrame;
     
+    CGRect trailerButtonFrame = self.trailerButton.frame;
+    trailerButtonFrame.origin.y += displacement;
+    self.trailerButton.frame = trailerButtonFrame;
+    
     CGSize contentSize = self.DetailsScrollView.contentSize;
     contentSize.height += displacement + 600;
     self.DetailsScrollView.contentSize = contentSize;
@@ -107,14 +114,19 @@
     
     int identification = [self.movie[@"id"] intValue];
 //    NSLog(@"%d", (long *)identification);
+    if ([segue.identifier  isEqual: @"toMenu"]){
     NSString *urlString = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%d/similar?api_key=eda1a3f4d4cd22b61fe7a4971ba6450d&language=en-US&page=1", identification];
     NSURL *url = [NSURL URLWithString:urlString];
     
-    NSLog(@"%@", urlString);
-    
     MoviesViewController *moviesViewController = [segue destinationViewController];
     moviesViewController.url = url;
-    moviesViewController.barTitle.title = [NSString stringWithFormat:@"Similar to: %@", self.movie[@"title"]];
+    moviesViewController.barTitle.title = [NSString stringWithFormat:@"Similar to %@", self.movie[@"title"]];
+    }
+    
+    else {
+        TrailerViewController *trailerViewController = [segue destinationViewController];
+        trailerViewController.movie = self.movie;
+    }
 }
 
 

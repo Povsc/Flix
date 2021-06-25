@@ -2,7 +2,7 @@
 
 **Flix** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **15** hours spent in total
+Time spent: **18** hours spent in total
 
 ## User Stories
 
@@ -33,6 +33,7 @@ The following **additional** features are implemented:
 
 - [x] Users can find a list of similar movies in the detail screen.
 - [x] User sees an error message when no similar movies are found.
+- [x] User can watch a trailer in the details screen.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
