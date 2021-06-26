@@ -42,7 +42,8 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Video Walkthrough
 
-(Will be added on later iterations).
+./Flix1.gif
+./Flix2.gif
 
 ## Notes
 
