@@ -58,7 +58,12 @@
     
     [self.titleLabel sizeToFit];
     [self.synopsisLabel sizeToFit];
-    NSInteger displacement = self.synopsisLabel.frame.size.height;
+    CGRect synopsisFrame = self.synopsisLabel.frame;
+    synopsisFrame.origin.y += self.titleLabel.frame.size.height -27;
+    self.synopsisLabel.frame = synopsisFrame;
+    
+    NSInteger displacement = self.synopsisLabel.frame.size.height + self.titleLabel.frame.size.height -27;
+
     
     CGRect dateFrame = self.dateLabel.frame;
     dateFrame.origin.y += displacement + 20;
@@ -123,9 +128,12 @@
     moviesViewController.barTitle.title = [NSString stringWithFormat:@"Similar to %@", self.movie[@"title"]];
     }
     
-    else {
+    else if ([segue.identifier isEqual:@"toTrailer"]) {
         TrailerViewController *trailerViewController = [segue destinationViewController];
         trailerViewController.movie = self.movie;
+    }
+    else {
+        NSLog(@"%@", @"WRONG SEGUE IDENTIFIER");
     }
 }
 
