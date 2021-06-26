@@ -43,8 +43,8 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Video Walkthrough
 
-[!]./Flix1.gif
-[1]./Flix2.gif
+![](https://i.imgur.com/fxqVKNA.gif)
+![](https://i.imgur.com/nc6h8Up.gif)
 
 ## Notes
 
